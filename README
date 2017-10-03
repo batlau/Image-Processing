@@ -1,0 +1,27 @@
+batziggy
+batya zigelman 308403310
+EX: 5
+
+FILES:
+createDB.m - A function that samples 5x5 patches from the image pyramid
+createPyramid.m - A function that given an input image, creates a pyramid of the different image sizes.
+findNearestNeighbors.m - A function that finds the 3 nearest neighbors for each patch of the input image.
+getImage.m - A function that given input of matching indexes for sampling and positioning, and a rendered
+		pyramid- creates a higher resolution image.
+getSamplingCenters.m - A function that given 3 nearest neighbors for each patch of the input image, returns
+		the location of the parent patch in the rendered pyramid
+getSamplingInformation.m - A function that gets the information for sampling a high resolution image. The 
+		function creates pairs of assignment positions in the high resolution image,
+		and sampling positions from the rendered pyramid image
+MyResults.m - A script that runs butterfly, and my 2 images, displaying certain images as requested.
+samplePatches.m - A function that samples 5x5 patches from the input image.
+weightSetting.m - A function that sets the weight of each patch, according to a given formula.
+
+In addition, I handed in two pictures - for use in MyResults.m
+
+
+
+REMARKS:
+I tested my program on the matlab R2015a platform and on the aquarium computers.
+
+The features that 
