@@ -1,0 +1,9 @@
+This repository is an exercise in which we use the super resolution to "enlarge" pictures.
+
+Given the original photos (first figure of every set of pictures), we build a dictionary, which we will then use to make the enlarged 
+picture (which is the ssecond picture in every series). The third picture is brought for comparison- to see how the super resolution
+compares to matlabs built-in function.
+
+In order to run this repo, run the following line (windows cmd):
+
+matlab -nodisplay -nosplash -nodesktop -r "run('\MyResults.m');"
