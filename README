@@ -1,27 +1,9 @@
-batziggy
-batya zigelman 308403310
-EX: 5
+This repository is an exercise in which we use the super resolution to "enlarge" pictures.
 
-FILES:
-createDB.m - A function that samples 5x5 patches from the image pyramid
-createPyramid.m - A function that given an input image, creates a pyramid of the different image sizes.
-findNearestNeighbors.m - A function that finds the 3 nearest neighbors for each patch of the input image.
-getImage.m - A function that given input of matching indexes for sampling and positioning, and a rendered
-		pyramid- creates a higher resolution image.
-getSamplingCenters.m - A function that given 3 nearest neighbors for each patch of the input image, returns
-		the location of the parent patch in the rendered pyramid
-getSamplingInformation.m - A function that gets the information for sampling a high resolution image. The 
-		function creates pairs of assignment positions in the high resolution image,
-		and sampling positions from the rendered pyramid image
-MyResults.m - A script that runs butterfly, and my 2 images, displaying certain images as requested.
-samplePatches.m - A function that samples 5x5 patches from the input image.
-weightSetting.m - A function that sets the weight of each patch, according to a given formula.
+Given the original photos (first figure of every set of pictures), we build a dictionary, which we will then use to make the enlarged 
+picture (which is the ssecond picture in every series). The third picture is brought for comparison- to see how the super resolution
+compares to matlabs built-in function.
 
-In addition, I handed in two pictures - for use in MyResults.m
+In order to run this repo, run the following line (windows cmd):
 
-
-
-REMARKS:
-I tested my program on the matlab R2015a platform and on the aquarium computers.
-
-The features that 
+matlab -nodisplay -nosplash -nodesktop -r "run('\MyResults.m');"
