@@ -1,7 +1,6 @@
 function [ highres ] = superResolution( im )
-tic
-%SUPERRESOLUTION Summary of this function goes here
-%Getting an image and returns high resolution image with doubled size.
+
+%Gets an image and returns high resolution image with doubled size.
 % Arguments:
 % im - grayscale image
 % 
@@ -11,16 +10,14 @@ tic
 %Get the pyramid from the input image:
 pyr = createPyramid( im );
 
-
 [m,n]=size(im);
 
-%Sample patches for the imput image:
+%Sample patches for the input image:
 [pxIm, pyIm, imPatches] = samplePatches( im ,0 );
-
 
 reshapedImPatches=reshape(imPatches,[size(imPatches,1)*size(imPatches,2),5,5]);
 [dbPx, dbPy,centersPyrLevel, dbPatches] = createDB( pyr );
-[idx,Dist] = findNearestNeighbors( reshapedImPatches,dbPatches  );
+[idx,Dist] = findNearestNeighbors( reshapedImPatches,dbPatches);
 
 %Save the positions of the center of the neighbors (child patches)
 xCenters=dbPx(idx);
@@ -40,7 +37,6 @@ stdDb(stdDb==0)=0.00001;
 stdDb=stdDb(idx);
 stdDb=reshape(stdDb,[(m-4),(n-4),3]);
 Dist=reshape(Dist,[(m-4),(n-4),3]);
-
 
 weights = weightsSetting( imPatches,Dist,pyr,stdDb );
 
