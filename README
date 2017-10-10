@@ -1,10 +1,26 @@
-This repository is an exercise in which we use super resolution to enlarge pictures.
+This repository is an exercise in which we use super resolution to double the size of pictures.
 
 Given the original photos (first figure of every set of pictures), we build a dictionary, which we will then use to make the enlarged 
 picture (which is the second picture in every series). The third picture is brought for comparison- to see how the super resolution
 compares to matlab's built-in function.
 
-Super Resolution is: 
+In this exercise I implemented super-resolution based on the grayscale layer of a yiq image, then resizing the i and q layers using
+matlab's built-in function.
+
+First I created a pyramid containing the original image, and 3 more copies of that image, where the size of pyr{i} is the size of pyr{i+1}
+divided by 2^(1/3) (size(pyr{i}) = size(pyr{i+1})/2^(1/3).
+Later, we will fill in 3 more levels in the pyramid, consecutively, while keeping the size porportions.
+
+Next, I sampled 5*5 patches from the original image- which we will later use to compare to patches from the smaller pictures in the pyramid
+so we can find the best matches for each patch, and find how that patch looks in the bigger version (before it was downsizes), and replace
+it in the larger image we are creating.
+
+Then, I created a "database" of all the patches in the current pyramid (i.e. the 3 images created by downsizing the input image), and indexed
+the patches so they are easily accessible, so when we find a patch that fits best with a patch in the image we are trying to enlarge, we
+can easily insert the higher resolution patch that matches the best fit.
+
+For each patch in the image that we are enlarging, we found the 3 "closest" neighbors using the builtin "knnsearch".
+
 
 
 In order to run this project, run "MyResults.m".
