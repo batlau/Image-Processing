@@ -21,6 +21,8 @@ can easily insert the higher resolution patch that matches the best fit.
 
 For each patch in the image that we are enlarging, we found the 3 "closest" neighbors using the builtin "knnsearch".
 
+A threshold was calculated to eliminate patches that are too sensitive to small translations.
+
 
 
 In order to run this project, run "MyResults.m".
